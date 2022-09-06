@@ -402,7 +402,7 @@ type Client struct {
 }
 
 // NewClient creates a new Client with default settings.
-func NewClient(resolvers []string) *Client {
+func NewClient() *Client {
 	return &Client{
 		HTTPClient:   cleanhttp.DefaultClient(),
 		Logger:       defaultLogger,
