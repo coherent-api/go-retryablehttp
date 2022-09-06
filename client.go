@@ -401,9 +401,9 @@ type Client struct {
 }
 
 // NewClient creates a new Client with default settings.
-func NewClient() *Client {
+func NewClient(resolvers []string) *Client {
 	return &Client{
-		HTTPClient:   cleanhttp.DefaultPooledClient(),
+		HTTPClient:   cleanhttp.DefaultClient(),
 		Logger:       defaultLogger,
 		RetryWaitMin: defaultRetryWaitMin,
 		RetryWaitMax: defaultRetryWaitMax,
