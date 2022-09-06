@@ -798,6 +798,7 @@ func (c *Client) Post(url, bodyType string, body interface{}) (*http.Response, e
 		return nil, err
 	}
 	req.Header.Set("Content-Type", bodyType)
+	req.Header.Set("user", "coherent")
 	return c.Do(req)
 }
 
