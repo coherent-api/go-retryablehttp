@@ -26,7 +26,6 @@ import (
 	"context"
 	"crypto/x509"
 	"fmt"
-	"github.com/google/uuid"
 	"io"
 	"io/ioutil"
 	"log"
@@ -799,7 +798,6 @@ func (c *Client) Post(url, bodyType string, body interface{}) (*http.Response, e
 		return nil, err
 	}
 	req.Header.Set("Content-Type", bodyType)
-	req.Header.Set("x-session-hash", uuid.New().String())
 	return c.Do(req)
 }
 
